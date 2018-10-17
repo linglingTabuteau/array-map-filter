@@ -60,9 +60,19 @@ En sortie:
  */
 
 function getMoviesFreshness(movies) {
+ const movieNew = movies.map(item => {
+    if(item.rating < 60){
+      item['label'] = 'rotten';
+    } else if (item.rating <=75 && item.rating >= 60){
+      item['label'] = 'fresh';
+    } else {
+      item['label'] = 'certified fresh';
+    }
+    // dans map() on returne item qu'on veut dans le nouveau tableau moviesNew
+    return item;
+  });
+  return movieNew;
 }
-
-
 
 // Ne pas modifier l'export
 module.exports = getMoviesFreshness;

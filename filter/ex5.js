@@ -38,7 +38,30 @@ Exemple d'entrée:
 
  */
 
+// function searchWordFilter(items, search) {
+//   return items.filter(item => {
+//     let itemLower = item.toLowerCase();
+//     let searchLower = search.toLowerCase();
+//    if (itemLower.includes(searchLower)){
+//      return item;
+//    }
+//   });
+// }
+
 function searchWordFilter(items, search) {
+  return items.filter(item => {
+    let arrLower = item.split(' ').map(item => item.toLowerCase());
+    // attention: case insensitive : ca veut dire qu'on doit ignorer la case avant de les comparer en utilisant toLowerCase() ou toUpperCase()
+    let i = 0;
+    while (arrLower[i]!== search.toLowerCase() && i < arrLower.length){
+        i++;
+        }
+    if (i < arrLower.length){
+      // il faut retourner un boolean true
+      return true;
+    }
+    
+  });
 }
 
 // Ne pas modifier l'export

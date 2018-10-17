@@ -24,6 +24,14 @@ Sortie attendue:
  */
 
 function keepStarks(names) {
+  return names.filter(name => {
+    let nameNew = name.split(' ');
+    if (nameNew[1] === 'Stark'){
+      return nameNew[1];
+    }
+
+    
+  });
 }
 
 // Ne pas modifier l'export

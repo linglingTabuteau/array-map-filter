@@ -12,6 +12,14 @@ Sortie attendue:
  */
 
 function getPositiveNumbers(numbers) {
+  return numbers.filter(nb => {
+    if(nb > 0 ){
+      return nb;
+    } else if(nb == 0){
+      // when you pass values itself, all non-zeros numbers equal to truthy and 0 equals falsy value and so it is ignored by filter. If you still want to stick to this way, due to some reason, enclose 0 within quotes and that will solve the problem.
+      return '0';
+    }
+  });
 }
 
 // Si besoin, tu peux toujours visualiser le résultat avec console.log,

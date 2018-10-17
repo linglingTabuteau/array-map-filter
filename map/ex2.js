@@ -43,8 +43,16 @@ En sortie: [
  */
 
 function getFoodCategories(foods) {
+ const newArr = foods.map(item =>{
+   if(item.isVegetarian){
+    //  quand il y a {} derniere =>, il faut mettre return
+     return `${item.food} is suitable for vegetarians`;
+    } else {
+      return `${item.food} is not suitable for vegetarians`;
+    }
+ });
+ return newArr;
 }
-
 
 
 // Ne pas modifier l'export
